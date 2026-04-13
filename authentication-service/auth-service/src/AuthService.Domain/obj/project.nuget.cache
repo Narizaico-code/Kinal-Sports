@@ -1,8 +1,8 @@
 {
   "version": 2,
-  "dgSpecHash": "KIBhi7bZpHDVVZbL0ZKIVUZHkvqX3tvru474rqnXlNM5aXxW4Xk92PeJ1HMuI+ktjAjej8KKISiAr5vs/kAoSg==",
+  "dgSpecHash": "C/UGq3rNEMM=",
   "success": true,
-  "projectFilePath": "C:\\Tareas\\IN6BV\\KinalSports\\authentication-service\\auth-service\\src\\AuthService.Domain\\AuthService.Domain.csproj",
+  "projectFilePath": "C:\\2024435\\KinalSports\\authentication-service\\auth-service\\src\\AuthService.Domain\\AuthService.Domain.csproj",
   "expectedPackageFiles": [],
   "logs": []
 }
