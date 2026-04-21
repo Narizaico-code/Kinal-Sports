@@ -10,8 +10,9 @@ const PAGE_SIZE = 8;
  
 export const Users = () => {
  
-  const { users, loading, error, fetchUsers } = useUserManagmentStore();
+  const { users, loading, error, fetchUsers, updateUserRole } = useUserManagmentStore();
   const registerUser = useAuthStore((state) => state.register);
+  const currentUser = useAuthStore((state) => state.user);
  
   const [search, setSearch] = useState("");
   const [roleFilter, setRoleFilter] = useState("ALL");
@@ -37,6 +38,17 @@ export const Users = () => {
     }
     showError(res.error || "Error al crear usuario");
     return false;
+  }
+
+  const handleSaveRole = async (user, newRole) => {
+    const res = await updateUserRole(user.id, newRole);
+    if( res.success ) {
+      showSuccess.apply("Rol actualizado correctamente");
+      setOpenDetailModal(false);
+      setSelectedUser(null);
+    } else {
+      showError(res.error || "No se pudo actualizar el rol");
+    }
   }
  
   const handleOpenDetail = (user) => {
@@ -173,6 +185,8 @@ export const Users = () => {
               setSelectedUser(null)
             }}
             user={selectedUser}
+            onSaveRole={handleSaveRole}
+            currentUserId={currentUser?.id}
             loading={loading}
           />
     </div >

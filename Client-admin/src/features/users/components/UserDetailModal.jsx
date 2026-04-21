@@ -5,6 +5,8 @@ export const UserDetailModal = ({
     isOpen,
     onClose,
     user,
+    currentUserId,
+    onSaveRole,
     loading,
 }) => {
     if (!isOpen || !user) return null;
@@ -19,6 +21,17 @@ export const UserDetailModal = ({
        
         return `${cloudinaryBase}${value.replace(/^\/+/,"")}`;
     })();
+
+    const isCurrentUser = currentUserId === user.id;
+    const hasChanges = role !== user.role;
+
+    const handleSave = async () => {
+        if(!hasChanges || isCurrentUser) {
+            onClose();
+        return;
+        }
+        await onSaveRole(user, role);
+    }
  
     return (
         <div className="fixed inset-0 bg-black/50 backdrop-blur-sm flex justify-center items-center z-50 px-3 sm:px-4">
@@ -81,6 +94,9 @@ export const UserDetailModal = ({
                         </label>
                         <select
                             className="w-full px-3 py-2 rounded-lg border-2 border-gray-300 bg-gray-50 focus:outline-none focus:border-blue-500 focus:ring-2 focus:ring-blue-200 transition"
+                            value={role}
+                            onChange={(e) => setRole(e.target.value)}
+                            disabled={isCurrentUser}
                         >
                             <option value="USER_ROLE">USER_ROLE</option>
                             <option value="ADMIN_ROLE">ADMIN_ROLE</option>
