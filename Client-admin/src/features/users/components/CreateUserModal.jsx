@@ -1,6 +1,6 @@
 import { useForm } from "react-hook-form";
 import { Spinner } from "../../../shared/components/layout/Spinner.jsx";
- 
+
 export const CreateUserModal = ({
     isOpen,
     onClose,
@@ -15,9 +15,9 @@ export const CreateUserModal = ({
         reset,
         formState: { errors },
     } = useForm();
- 
+
     if (!isOpen) return null;
- 
+
     const submit = async (values) => {
         const formData = new FormData();
         formData.append("name", values.name);
@@ -29,14 +29,14 @@ export const CreateUserModal = ({
         if (values.profilePicture?.[0]) {
             formData.append("profilePicture", values.profilePicture[0]);
         }
- 
+
         const ok = await onCreate(formData);
         if (ok) {
             reset();
             onClose();
         }
     };
- 
+
     return (
         <div className="fixed inset-0 bg-black/50 backdrop-blur-sm flex justify-center items-center z-50 px-3 sm:px-4">
             <div className="bg-white rounded-2xl shadow-2xl w-full max-w-2xl max-h-[90vh] flex flex-col overflow-hidden">
@@ -52,7 +52,7 @@ export const CreateUserModal = ({
                         Completa la información para registrar un nuevo usuario
                     </p>
                 </div>
- 
+
                 <form
                     onSubmit={handleSubmit(submit)}
                     className="p-4 sm:p-6 space-y-4 overflow-y-auto"
@@ -87,7 +87,7 @@ export const CreateUserModal = ({
                             )}
                         </div>
                     </div>
- 
+
                     <div className="grid grid-cols-1 md:grid-cols-2 gap-4">
                         <div>
                             <label className="block text-sm font-medium text-gray-700 mb-1.5">
@@ -130,7 +130,7 @@ export const CreateUserModal = ({
                             )}
                         </div>
                     </div>
- 
+
                     <div>
                         <label className="block text-sm font-medium text-gray-700 mb-1.5">
                             Email
@@ -150,7 +150,7 @@ export const CreateUserModal = ({
                             <p className="text-red-600 text-xs">{errors.email.message}</p>
                         )}
                     </div>
- 
+
                     <div className="grid grid-cols-1 md:grid-cols-2 gap-4">
                         <div>
                             <label className="block text-sm font-medium text-gray-700 mb-1.5">
@@ -196,7 +196,7 @@ export const CreateUserModal = ({
                             )}
                         </div>
                     </div>
- 
+
                     <div>
                         <label className="block text-sm font-medium text-gray-700 mb-1.5">
                             Foto de Perfil
@@ -208,9 +208,9 @@ export const CreateUserModal = ({
                             className="w-full px-3 py-2 border rounded-lg"
                         />
                     </div>
- 
+
                     {error && <p className="text-red-600 text-sm text-center">{error}</p>}
- 
+
                     <div className="flex flex-col-reverse sm:flex-row sm:justify-end gap-3 pt-4 border-t">
                         <button
                             type="button"

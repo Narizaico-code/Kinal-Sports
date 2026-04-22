@@ -1,6 +1,7 @@
-import { Spinner } from "../../../shared/components/layout/Spinner";
+import { Spinner } from "../../../shared/components/layout/Spinner.jsx";
 import defaultAvatarImg from "../../../assets/img/avatarDefault.png";
- 
+import { useState } from "react";
+
 export const UserDetailModal = ({
     isOpen,
     onClose,
@@ -10,16 +11,22 @@ export const UserDetailModal = ({
     loading,
 }) => {
     if (!isOpen || !user) return null;
- 
+
+    const [ role, setRole ] = useState(user?.role || "USER_ROLE")
+
     const avatarSrc = (() => {
         const value = user?.profilePicture?.trim();
-        if (!value) return defaultAvatarImg
-        if (value.startsWith("http") || value.startsWith("https")) {
+        if (!value) return defaultAvatarImg;
+
+        if (value.startsWith("http://") || value.startsWith("https://")) {
             return value;
         }
-        const cloudinaryBase = import.meta.env.VITE_CLOUDINARY_BASE_URL || "https://res.cloudinary.com/djuxr89ny/image/upload"
-       
-        return `${cloudinaryBase}${value.replace(/^\/+/,"")}`;
+
+        const cloudinaryBase =
+            import.meta.env.VITE_CLOUDINARY_BASE_URL ||
+            "https://res.cloudinary.com/dqx1m6nxh/image/upload/";
+
+        return `${cloudinaryBase}${value.replace(/^\/+/, "")}`;
     })();
 
     const isCurrentUser = currentUserId === user.id;
@@ -28,15 +35,15 @@ export const UserDetailModal = ({
     const handleSave = async () => {
         if(!hasChanges || isCurrentUser) {
             onClose();
-        return;
+            return;
         }
-        await onSaveRole(user, role);
+        await onSaveRole(user, role)
     }
- 
+
     return (
         <div className="fixed inset-0 bg-black/50 backdrop-blur-sm flex justify-center items-center z-50 px-3 sm:px-4">
             <div className="bg-white rounded-2xl shadow-2xl w-full max-w-xl max-h-[90vh] flex flex-col overflow-hidden">
- 
+
                 <div
                     className="p-4 sm:p-5 text-white sticky top-0 z-10"
                     style={{
@@ -49,12 +56,12 @@ export const UserDetailModal = ({
                         Consulta información y cambia el rol del usuario
                     </p>
                 </div>
- 
+
                 <div className="p-5 space-y-4 overflow-y-auto">
                     <div className="flex items-center gap-4">
                         <img
                             src={avatarSrc}
-                            alt={user.name}
+                            alt={user.username}
                             className="w-16 h-16 rounded-full object-cover border"
                             onError={(e) => {
                                 e.currentTarget.onError = null;
@@ -68,7 +75,7 @@ export const UserDetailModal = ({
                             <p className="text-sm text-gray-600">@{user.username}</p>
                         </div>
                     </div>
- 
+
                     <div className="grid grid-cols-1 md:grid-cols-2 gap-3">
                         <div className="bg-gray-50 rounded-lg p-3">
                             <p className="text-xs text-gray-500">ID</p>
@@ -80,30 +87,35 @@ export const UserDetailModal = ({
                         </div>
                         <div className="bg-gray-50 rounded-lg p-3">
                             <p className="text-xs text-gray-500">Nombre</p>
-                            <p className="text-sm font-medium">{user.name}</p>
+                            <p className="text-sm font-medium">{user.name || "-"}</p>
                         </div>
                         <div className="bg-gray-50 rounded-lg p-3">
                             <p className="text-xs text-gray-500">Apellido</p>
-                            <p className="text-sm font-medium">{user.surname}</p>
+                            <p className="text-sm font-medium">{user.surname || "-"}</p>
                         </div>
                     </div>
- 
+
                     <div>
                         <label className="block text-sm font-semibold text-gray-700 mb-1">
                             Rol
                         </label>
                         <select
-                            className="w-full px-3 py-2 rounded-lg border-2 border-gray-300 bg-gray-50 focus:outline-none focus:border-blue-500 focus:ring-2 focus:ring-blue-200 transition"
                             value={role}
                             onChange={(e) => setRole(e.target.value)}
                             disabled={isCurrentUser}
+                            className="w-full px-3 py-2 rounded-lg border-2 border-gray-300 bg-gray-50 focus:outline-none focus:border-blue-500 focus:ring-2 focus:ring-blue-200 transition"
                         >
                             <option value="USER_ROLE">USER_ROLE</option>
                             <option value="ADMIN_ROLE">ADMIN_ROLE</option>
                         </select>
+                        {isCurrentUser && (
+                            <p className="text-xs text-gray-500 mt-1">
+                                No puedes cambiar tu propio rol.
+                            </p>
+                        )}
                     </div>
                 </div>
- 
+
                 <div className="flex flex-col-reverse sm:flex-row sm:justify-end gap-3 p-4 border-t">
                     <button
                         type="button"
@@ -114,6 +126,8 @@ export const UserDetailModal = ({
                     </button>
                     <button
                         type="button"
+                        onClick={handleSave}
+                        disabled={loading || !hasChanges || isCurrentUser}
                         className="w-full sm:w-auto px-5 py-2 rounded-lg text-white font-medium transition shadow"
                         style={{
                             background:
@@ -124,7 +138,7 @@ export const UserDetailModal = ({
                         {loading ? <Spinner small /> : "Guardar cambios"}
                     </button>
                 </div>
- 
+
             </div>
         </div>
     );

@@ -1,0 +1,164 @@
+[2026-04-22 13:14:33 INF] Checking database connection... {"SourceContext":"Program"}
+[2026-04-22 13:14:33 INF] Database ready. Running seed data... {"SourceContext":"Program"}
+[2026-04-22 13:14:33 INF] Database initialization completed successfully {"SourceContext":"Program"}
+[2026-04-22 13:14:33 ERR] Hosting failed to start {"EventId":{"Id":11,"Name":"HostedServiceStartupFaulted"},"SourceContext":"Microsoft.Extensions.Hosting.Internal.Host"}
+System.IO.IOException: Failed to bind to address http://127.0.0.1:5156: address already in use.
+ ---> Microsoft.AspNetCore.Connections.AddressInUseException: Solo se permite un uso de cada dirección de socket (protocolo/dirección de red/puerto)
+ ---> System.Net.Sockets.SocketException (10048): Solo se permite un uso de cada dirección de socket (protocolo/dirección de red/puerto)
+   at System.Net.Sockets.Socket.UpdateStatusAfterSocketErrorAndThrowException(SocketError error, Boolean disconnectOnFailure, String callerName)
+   at System.Net.Sockets.Socket.DoBind(EndPoint endPointSnapshot, SocketAddress socketAddress)
+   at System.Net.Sockets.Socket.Bind(EndPoint localEP)
+   at Microsoft.AspNetCore.Server.Kestrel.Transport.Sockets.SocketTransportOptions.CreateDefaultBoundListenSocket(EndPoint endpoint)
+   at Microsoft.AspNetCore.Server.Kestrel.Transport.Sockets.SocketConnectionListener.Bind()
+   --- End of inner exception stack trace ---
+   at Microsoft.AspNetCore.Server.Kestrel.Transport.Sockets.SocketConnectionListener.Bind()
+   at Microsoft.AspNetCore.Server.Kestrel.Transport.Sockets.SocketTransportFactory.BindAsync(EndPoint endpoint, CancellationToken cancellationToken)
+   at Microsoft.AspNetCore.Server.Kestrel.Core.Internal.Infrastructure.TransportManager.BindAsync(EndPoint endPoint, ConnectionDelegate connectionDelegate, EndpointConfig endpointConfig, CancellationToken cancellationToken)
+   at Microsoft.AspNetCore.Server.Kestrel.Core.KestrelServerImpl.<>c__DisplayClass28_0`1.<<StartAsync>g__OnBind|0>d.MoveNext()
+--- End of stack trace from previous location ---
+   at Microsoft.AspNetCore.Server.Kestrel.Core.Internal.AddressBinder.BindEndpointAsync(ListenOptions endpoint, AddressBindContext context, CancellationToken cancellationToken)
+   --- End of inner exception stack trace ---
+   at Microsoft.AspNetCore.Server.Kestrel.Core.Internal.AddressBinder.BindEndpointAsync(ListenOptions endpoint, AddressBindContext context, CancellationToken cancellationToken)
+   at Microsoft.AspNetCore.Server.Kestrel.Core.LocalhostListenOptions.BindAsync(AddressBindContext context, CancellationToken cancellationToken)
+   at Microsoft.AspNetCore.Server.Kestrel.Core.Internal.AddressBinder.AddressesStrategy.BindAsync(AddressBindContext context, CancellationToken cancellationToken)
+   at Microsoft.AspNetCore.Server.Kestrel.Core.Internal.AddressBinder.BindAsync(ListenOptions[] listenOptions, AddressBindContext context, Func`2 useHttps, CancellationToken cancellationToken)
+   at Microsoft.AspNetCore.Server.Kestrel.Core.KestrelServerImpl.BindAsync(CancellationToken cancellationToken)
+   at Microsoft.AspNetCore.Server.Kestrel.Core.KestrelServerImpl.StartAsync[TContext](IHttpApplication`1 application, CancellationToken cancellationToken)
+   at Microsoft.AspNetCore.Hosting.GenericWebHostService.StartAsync(CancellationToken cancellationToken)
+   at Microsoft.Extensions.Hosting.Internal.Host.<StartAsync>b__15_1(IHostedService service, CancellationToken token)
+   at Microsoft.Extensions.Hosting.Internal.Host.ForeachService[T](IEnumerable`1 services, CancellationToken token, Boolean concurrent, Boolean abortOnFirstException, List`1 exceptions, Func`3 operation)
+[2026-04-22 13:15:09 INF] Checking database connection... {"SourceContext":"Program"}
+[2026-04-22 13:15:09 INF] Database ready. Running seed data... {"SourceContext":"Program"}
+[2026-04-22 13:15:09 INF] Database initialization completed successfully {"SourceContext":"Program"}
+[2026-04-22 13:15:09 ERR] Hosting failed to start {"EventId":{"Id":11,"Name":"HostedServiceStartupFaulted"},"SourceContext":"Microsoft.Extensions.Hosting.Internal.Host"}
+System.IO.IOException: Failed to bind to address http://127.0.0.1:5156: address already in use.
+ ---> Microsoft.AspNetCore.Connections.AddressInUseException: Solo se permite un uso de cada dirección de socket (protocolo/dirección de red/puerto)
+ ---> System.Net.Sockets.SocketException (10048): Solo se permite un uso de cada dirección de socket (protocolo/dirección de red/puerto)
+   at System.Net.Sockets.Socket.UpdateStatusAfterSocketErrorAndThrowException(SocketError error, Boolean disconnectOnFailure, String callerName)
+   at System.Net.Sockets.Socket.DoBind(EndPoint endPointSnapshot, SocketAddress socketAddress)
+   at System.Net.Sockets.Socket.Bind(EndPoint localEP)
+   at Microsoft.AspNetCore.Server.Kestrel.Transport.Sockets.SocketTransportOptions.CreateDefaultBoundListenSocket(EndPoint endpoint)
+   at Microsoft.AspNetCore.Server.Kestrel.Transport.Sockets.SocketConnectionListener.Bind()
+   --- End of inner exception stack trace ---
+   at Microsoft.AspNetCore.Server.Kestrel.Transport.Sockets.SocketConnectionListener.Bind()
+   at Microsoft.AspNetCore.Server.Kestrel.Transport.Sockets.SocketTransportFactory.BindAsync(EndPoint endpoint, CancellationToken cancellationToken)
+   at Microsoft.AspNetCore.Server.Kestrel.Core.Internal.Infrastructure.TransportManager.BindAsync(EndPoint endPoint, ConnectionDelegate connectionDelegate, EndpointConfig endpointConfig, CancellationToken cancellationToken)
+   at Microsoft.AspNetCore.Server.Kestrel.Core.KestrelServerImpl.<>c__DisplayClass28_0`1.<<StartAsync>g__OnBind|0>d.MoveNext()
+--- End of stack trace from previous location ---
+   at Microsoft.AspNetCore.Server.Kestrel.Core.Internal.AddressBinder.BindEndpointAsync(ListenOptions endpoint, AddressBindContext context, CancellationToken cancellationToken)
+   --- End of inner exception stack trace ---
+   at Microsoft.AspNetCore.Server.Kestrel.Core.Internal.AddressBinder.BindEndpointAsync(ListenOptions endpoint, AddressBindContext context, CancellationToken cancellationToken)
+   at Microsoft.AspNetCore.Server.Kestrel.Core.LocalhostListenOptions.BindAsync(AddressBindContext context, CancellationToken cancellationToken)
+   at Microsoft.AspNetCore.Server.Kestrel.Core.Internal.AddressBinder.AddressesStrategy.BindAsync(AddressBindContext context, CancellationToken cancellationToken)
+   at Microsoft.AspNetCore.Server.Kestrel.Core.Internal.AddressBinder.BindAsync(ListenOptions[] listenOptions, AddressBindContext context, Func`2 useHttps, CancellationToken cancellationToken)
+   at Microsoft.AspNetCore.Server.Kestrel.Core.KestrelServerImpl.BindAsync(CancellationToken cancellationToken)
+   at Microsoft.AspNetCore.Server.Kestrel.Core.KestrelServerImpl.StartAsync[TContext](IHttpApplication`1 application, CancellationToken cancellationToken)
+   at Microsoft.AspNetCore.Hosting.GenericWebHostService.StartAsync(CancellationToken cancellationToken)
+   at Microsoft.Extensions.Hosting.Internal.Host.<StartAsync>b__15_1(IHostedService service, CancellationToken token)
+   at Microsoft.Extensions.Hosting.Internal.Host.ForeachService[T](IEnumerable`1 services, CancellationToken token, Boolean concurrent, Boolean abortOnFirstException, List`1 exceptions, Func`3 operation)
+[2026-04-22 13:18:01 INF] Checking database connection... {"SourceContext":"Program"}
+[2026-04-22 13:18:01 INF] Database ready. Running seed data... {"SourceContext":"Program"}
+[2026-04-22 13:18:02 INF] Database initialization completed successfully {"SourceContext":"Program"}
+[2026-04-22 13:18:02 INF] AuthService API is running at http://localhost:5156. Health endpoint: http://localhost:5156/health {"SourceContext":"Program"}
+[2026-04-22 13:20:11 INF] HTTP OPTIONS /api/v1/auth/login responded 204 in 3.1519 ms {"SourceContext":"Serilog.AspNetCore.RequestLoggingMiddleware","RequestId":"0HNL0KGM6CTOL:00000001","ConnectionId":"0HNL0KGM6CTOL"}
+[2026-04-22 13:20:11 INF] User login succeeded {"EventId":{"Id":1002,"Name":"LogUserLoggedIn"},"SourceContext":"AuthService.Application.Services.AuthService","ActionId":"99f094c5-0d5d-4fd9-bca9-0deafa65b349","ActionName":"AuthService.Api.Controllers.AuthController.Login (AuthService.Api)","RequestId":"0HNL0KGM6CTOL:00000002","RequestPath":"/api/v1/auth/login","ConnectionId":"0HNL0KGM6CTOL"}
+[2026-04-22 13:20:12 INF] HTTP POST /api/v1/auth/login responded 200 in 677.5745 ms {"SourceContext":"Serilog.AspNetCore.RequestLoggingMiddleware","RequestId":"0HNL0KGM6CTOL:00000002","ConnectionId":"0HNL0KGM6CTOL"}
+[2026-04-22 13:20:14 INF] HTTP OPTIONS /api/v1/auth/users responded 204 in 0.3375 ms {"SourceContext":"Serilog.AspNetCore.RequestLoggingMiddleware","RequestId":"0HNL0KGM6CTOL:00000003","ConnectionId":"0HNL0KGM6CTOL"}
+[2026-04-22 13:20:14 INF] HTTP GET /api/v1/auth/users responded 200 in 108.7716 ms {"SourceContext":"Serilog.AspNetCore.RequestLoggingMiddleware","RequestId":"0HNL0KGM6CTOL:00000004","ConnectionId":"0HNL0KGM6CTOL"}
+[2026-04-22 13:20:42 INF] HTTP OPTIONS /api/v1/auth/register responded 204 in 0.1922 ms {"SourceContext":"Serilog.AspNetCore.RequestLoggingMiddleware","RequestId":"0HNL0KGM6CTOL:00000005","ConnectionId":"0HNL0KGM6CTOL"}
+[2026-04-22 13:20:43 INF] User NArizaico registered successfully {"EventId":{"Id":1001,"Name":"LogUserRegistered"},"SourceContext":"AuthService.Application.Services.AuthService","ActionId":"dabf1f1e-7d49-4d5a-ad3b-71045b3c9a73","ActionName":"AuthService.Api.Controllers.AuthController.Register (AuthService.Api)","RequestId":"0HNL0KGM6CTOL:00000006","RequestPath":"/api/v1/auth/register","ConnectionId":"0HNL0KGM6CTOL"}
+[2026-04-22 13:20:43 INF] HTTP POST /api/v1/auth/register responded 201 in 327.8159 ms {"SourceContext":"Serilog.AspNetCore.RequestLoggingMiddleware","RequestId":"0HNL0KGM6CTOL:00000006","ConnectionId":"0HNL0KGM6CTOL"}
+[2026-04-22 13:20:43 INF] HTTP GET /api/v1/auth/users responded 200 in 7.4023 ms {"SourceContext":"Serilog.AspNetCore.RequestLoggingMiddleware","RequestId":"0HNL0KGM6CTOL:00000007","ConnectionId":"0HNL0KGM6CTOL"}
+[2026-04-22 13:21:04 ERR] Failed to send email {"SourceContext":"AuthService.Application.Services.EmailService","ActionId":"dabf1f1e-7d49-4d5a-ad3b-71045b3c9a73","ActionName":"AuthService.Api.Controllers.AuthController.Register (AuthService.Api)","RequestId":"0HNL0KGM6CTOL:00000006","RequestPath":"/api/v1/auth/register","ConnectionId":"0HNL0KGM6CTOL"}
+System.Net.Sockets.SocketException (10060): Se produjo un error durante el intento de conexión ya que la parte conectada no respondió adecuadamente tras un periodo de tiempo, o bien se produjo un error en la conexión establecida ya que el host conectado no ha podido responder.
+   at System.Net.Sockets.Socket.AwaitableSocketAsyncEventArgs.ThrowException(SocketError error, CancellationToken cancellationToken)
+   at System.Net.Sockets.Socket.AwaitableSocketAsyncEventArgs.System.Threading.Tasks.Sources.IValueTaskSource.GetResult(Int16 token)
+   at System.Threading.Tasks.ValueTask.ValueTaskSourceAsTask.<>c.<.cctor>b__4_0(Object state)
+--- End of stack trace from previous location ---
+   at System.Threading.Tasks.TaskToAsyncResult.End(IAsyncResult asyncResult)
+   at MailKit.Net.SocketUtils.SocketConnectState.OnEndConnect(IAsyncResult ar)
+--- End of stack trace from previous location ---
+   at MailKit.Net.SocketUtils.ConnectAsync(String host, Int32 port, IPEndPoint localEndPoint, CancellationToken cancellationToken)
+   at MailKit.Net.SocketUtils.ConnectAsync(String host, Int32 port, IPEndPoint localEndPoint, Int32 timeout, CancellationToken cancellationToken)
+   at MailKit.MailService.ConnectNetworkAsync(String host, Int32 port, CancellationToken cancellationToken)
+   at MailKit.Net.Smtp.SmtpClient.ConnectAsync(String host, Int32 port, SecureSocketOptions options, CancellationToken cancellationToken)
+   at AuthService.Application.Services.EmailService.SendEmailAsync(String to, String subject, String body) in C:\Users\Informatica\Documents\2024435\Kinal-Sports\authentication-service\auth-service\src\AuthService.Application\Services\EmailService.cs:line 119
+[2026-04-22 13:21:04 ERR] Failed to send email {"SourceContext":"AuthService.Application.Services.EmailService","ActionId":"dabf1f1e-7d49-4d5a-ad3b-71045b3c9a73","ActionName":"AuthService.Api.Controllers.AuthController.Register (AuthService.Api)","RequestId":"0HNL0KGM6CTOL:00000006","RequestPath":"/api/v1/auth/register","ConnectionId":"0HNL0KGM6CTOL"}
+System.Net.Sockets.SocketException (10060): Se produjo un error durante el intento de conexión ya que la parte conectada no respondió adecuadamente tras un periodo de tiempo, o bien se produjo un error en la conexión establecida ya que el host conectado no ha podido responder.
+   at System.Net.Sockets.Socket.AwaitableSocketAsyncEventArgs.ThrowException(SocketError error, CancellationToken cancellationToken)
+   at System.Net.Sockets.Socket.AwaitableSocketAsyncEventArgs.System.Threading.Tasks.Sources.IValueTaskSource.GetResult(Int16 token)
+   at System.Threading.Tasks.ValueTask.ValueTaskSourceAsTask.<>c.<.cctor>b__4_0(Object state)
+--- End of stack trace from previous location ---
+   at System.Threading.Tasks.TaskToAsyncResult.End(IAsyncResult asyncResult)
+   at MailKit.Net.SocketUtils.SocketConnectState.OnEndConnect(IAsyncResult ar)
+--- End of stack trace from previous location ---
+   at MailKit.Net.SocketUtils.ConnectAsync(String host, Int32 port, IPEndPoint localEndPoint, CancellationToken cancellationToken)
+   at MailKit.Net.SocketUtils.ConnectAsync(String host, Int32 port, IPEndPoint localEndPoint, Int32 timeout, CancellationToken cancellationToken)
+   at MailKit.MailService.ConnectNetworkAsync(String host, Int32 port, CancellationToken cancellationToken)
+   at MailKit.Net.Smtp.SmtpClient.ConnectAsync(String host, Int32 port, SecureSocketOptions options, CancellationToken cancellationToken)
+   at AuthService.Application.Services.EmailService.SendEmailAsync(String to, String subject, String body) in C:\Users\Informatica\Documents\2024435\Kinal-Sports\authentication-service\auth-service\src\AuthService.Application\Services\EmailService.cs:line 119
+[2026-04-22 13:21:04 ERR] Failed to send verification email {"SourceContext":"AuthService.Application.Services.AuthService","ActionId":"dabf1f1e-7d49-4d5a-ad3b-71045b3c9a73","ActionName":"AuthService.Api.Controllers.AuthController.Register (AuthService.Api)","RequestId":"0HNL0KGM6CTOL:00000006","RequestPath":"/api/v1/auth/register","ConnectionId":"0HNL0KGM6CTOL"}
+System.InvalidOperationException: Failed to send email: Se produjo un error durante el intento de conexión ya que la parte conectada no respondió adecuadamente tras un periodo de tiempo, o bien se produjo un error en la conexión establecida ya que el host conectado no ha podido responder.
+ ---> System.Net.Sockets.SocketException (10060): Se produjo un error durante el intento de conexión ya que la parte conectada no respondió adecuadamente tras un periodo de tiempo, o bien se produjo un error en la conexión establecida ya que el host conectado no ha podido responder.
+   at System.Net.Sockets.Socket.AwaitableSocketAsyncEventArgs.ThrowException(SocketError error, CancellationToken cancellationToken)
+   at System.Net.Sockets.Socket.AwaitableSocketAsyncEventArgs.System.Threading.Tasks.Sources.IValueTaskSource.GetResult(Int16 token)
+   at System.Threading.Tasks.ValueTask.ValueTaskSourceAsTask.<>c.<.cctor>b__4_0(Object state)
+--- End of stack trace from previous location ---
+   at System.Threading.Tasks.TaskToAsyncResult.End(IAsyncResult asyncResult)
+   at MailKit.Net.SocketUtils.SocketConnectState.OnEndConnect(IAsyncResult ar)
+--- End of stack trace from previous location ---
+   at MailKit.Net.SocketUtils.ConnectAsync(String host, Int32 port, IPEndPoint localEndPoint, CancellationToken cancellationToken)
+   at MailKit.Net.SocketUtils.ConnectAsync(String host, Int32 port, IPEndPoint localEndPoint, Int32 timeout, CancellationToken cancellationToken)
+   at MailKit.MailService.ConnectNetworkAsync(String host, Int32 port, CancellationToken cancellationToken)
+   at MailKit.Net.Smtp.SmtpClient.ConnectAsync(String host, Int32 port, SecureSocketOptions options, CancellationToken cancellationToken)
+   at AuthService.Application.Services.EmailService.SendEmailAsync(String to, String subject, String body) in C:\Users\Informatica\Documents\2024435\Kinal-Sports\authentication-service\auth-service\src\AuthService.Application\Services\EmailService.cs:line 119
+   --- End of inner exception stack trace ---
+   at AuthService.Application.Services.EmailService.SendEmailAsync(String to, String subject, String body) in C:\Users\Informatica\Documents\2024435\Kinal-Sports\authentication-service\auth-service\src\AuthService.Application\Services\EmailService.cs:line 171
+   at AuthService.Application.Services.EmailService.SendEmailVerificationAsync(String email, String username, String token) in C:\Users\Informatica\Documents\2024435\Kinal-Sports\authentication-service\auth-service\src\AuthService.Application\Services\EmailService.cs:line 29
+   at AuthService.Application.Services.AuthService.<>c__DisplayClass9_0.<<RegisterAsync>b__0>d.MoveNext() in C:\Users\Informatica\Documents\2024435\Kinal-Sports\authentication-service\auth-service\src\AuthService.Application\Services\AuthService.cs:line 140
+[2026-04-22 13:23:43 INF] HTTP OPTIONS /api/v1/users/usr_uxGp8DR63Y7d/role responded 204 in 0.3391 ms {"SourceContext":"Serilog.AspNetCore.RequestLoggingMiddleware","RequestId":"0HNL0KGM6CTOM:00000001","ConnectionId":"0HNL0KGM6CTOM"}
+[2026-04-22 13:23:43 INF] HTTP PUT /api/v1/users/usr_uxGp8DR63Y7d/role responded 200 in 38.5280 ms {"SourceContext":"Serilog.AspNetCore.RequestLoggingMiddleware","RequestId":"0HNL0KGM6CTOM:00000002","ConnectionId":"0HNL0KGM6CTOM"}
+[2026-04-22 13:50:41 INF] HTTP OPTIONS /api/v1/auth/users responded 204 in 0.0783 ms {"SourceContext":"Serilog.AspNetCore.RequestLoggingMiddleware","RequestId":"0HNL0KGM6CTON:00000001","ConnectionId":"0HNL0KGM6CTON"}
+[2026-04-22 13:50:41 INF] HTTP GET /api/v1/auth/users responded 401 in 5.3380 ms {"SourceContext":"Serilog.AspNetCore.RequestLoggingMiddleware","RequestId":"0HNL0KGM6CTON:00000002","ConnectionId":"0HNL0KGM6CTON"}
+[2026-04-22 13:50:48 INF] HTTP GET /api/v1/auth/users responded 401 in 0.6445 ms {"SourceContext":"Serilog.AspNetCore.RequestLoggingMiddleware","RequestId":"0HNL0KGM6CTON:00000003","ConnectionId":"0HNL0KGM6CTON"}
+[2026-04-22 13:51:05 INF] HTTP OPTIONS /api/v1/auth/login responded 204 in 0.2612 ms {"SourceContext":"Serilog.AspNetCore.RequestLoggingMiddleware","RequestId":"0HNL0KGM6CTOO:00000001","ConnectionId":"0HNL0KGM6CTOO"}
+[2026-04-22 13:51:05 INF] User login succeeded {"EventId":{"Id":1002,"Name":"LogUserLoggedIn"},"SourceContext":"AuthService.Application.Services.AuthService","ActionId":"99f094c5-0d5d-4fd9-bca9-0deafa65b349","ActionName":"AuthService.Api.Controllers.AuthController.Login (AuthService.Api)","RequestId":"0HNL0KGM6CTOO:00000002","RequestPath":"/api/v1/auth/login","ConnectionId":"0HNL0KGM6CTOO"}
+[2026-04-22 13:51:05 INF] HTTP POST /api/v1/auth/login responded 200 in 70.2986 ms {"SourceContext":"Serilog.AspNetCore.RequestLoggingMiddleware","RequestId":"0HNL0KGM6CTOO:00000002","ConnectionId":"0HNL0KGM6CTOO"}
+[2026-04-22 13:51:08 INF] HTTP GET /api/v1/auth/users responded 200 in 4.3352 ms {"SourceContext":"Serilog.AspNetCore.RequestLoggingMiddleware","RequestId":"0HNL0KGM6CTOO:00000003","ConnectionId":"0HNL0KGM6CTOO"}
+[2026-04-22 13:52:51 INF] HTTP GET /api/v1/auth/users responded 200 in 4.6915 ms {"SourceContext":"Serilog.AspNetCore.RequestLoggingMiddleware","RequestId":"0HNL0KGM6CTOO:00000004","ConnectionId":"0HNL0KGM6CTOO"}
+[2026-04-22 14:08:07 INF] HTTP OPTIONS /api/v1/auth/users responded 204 in 0.0827 ms {"SourceContext":"Serilog.AspNetCore.RequestLoggingMiddleware","RequestId":"0HNL0KGM6CTOP:00000001","ConnectionId":"0HNL0KGM6CTOP"}
+[2026-04-22 14:08:07 INF] HTTP GET /api/v1/auth/users responded 401 in 0.5305 ms {"SourceContext":"Serilog.AspNetCore.RequestLoggingMiddleware","RequestId":"0HNL0KGM6CTOP:00000002","ConnectionId":"0HNL0KGM6CTOP"}
+[2026-04-22 14:08:16 INF] HTTP OPTIONS /api/v1/auth/login responded 204 in 0.1048 ms {"SourceContext":"Serilog.AspNetCore.RequestLoggingMiddleware","RequestId":"0HNL0KGM6CTOP:00000003","ConnectionId":"0HNL0KGM6CTOP"}
+[2026-04-22 14:08:16 INF] User login succeeded {"EventId":{"Id":1002,"Name":"LogUserLoggedIn"},"SourceContext":"AuthService.Application.Services.AuthService","ActionId":"99f094c5-0d5d-4fd9-bca9-0deafa65b349","ActionName":"AuthService.Api.Controllers.AuthController.Login (AuthService.Api)","RequestId":"0HNL0KGM6CTOP:00000004","RequestPath":"/api/v1/auth/login","ConnectionId":"0HNL0KGM6CTOP"}
+[2026-04-22 14:08:16 INF] HTTP POST /api/v1/auth/login responded 200 in 73.1103 ms {"SourceContext":"Serilog.AspNetCore.RequestLoggingMiddleware","RequestId":"0HNL0KGM6CTOP:00000004","ConnectionId":"0HNL0KGM6CTOP"}
+[2026-04-22 14:08:17 INF] HTTP GET /api/v1/auth/users responded 200 in 4.2165 ms {"SourceContext":"Serilog.AspNetCore.RequestLoggingMiddleware","RequestId":"0HNL0KGM6CTOP:00000005","ConnectionId":"0HNL0KGM6CTOP"}
+[2026-04-22 14:11:49 INF] HTTP GET /api/v1/auth/users responded 200 in 3.4410 ms {"SourceContext":"Serilog.AspNetCore.RequestLoggingMiddleware","RequestId":"0HNL0KGM6CTOQ:00000001","ConnectionId":"0HNL0KGM6CTOQ"}
+[2026-04-22 14:11:50 INF] HTTP GET /api/v1/auth/users responded 200 in 3.9853 ms {"SourceContext":"Serilog.AspNetCore.RequestLoggingMiddleware","RequestId":"0HNL0KGM6CTOQ:00000002","ConnectionId":"0HNL0KGM6CTOQ"}
+[2026-04-22 14:19:25 INF] HTTP OPTIONS /api/v1/auth/users responded 204 in 0.2624 ms {"SourceContext":"Serilog.AspNetCore.RequestLoggingMiddleware","RequestId":"0HNL0KGM6CTOR:00000001","ConnectionId":"0HNL0KGM6CTOR"}
+[2026-04-22 14:19:25 INF] HTTP GET /api/v1/auth/users responded 200 in 11.9817 ms {"SourceContext":"Serilog.AspNetCore.RequestLoggingMiddleware","RequestId":"0HNL0KGM6CTOR:00000002","ConnectionId":"0HNL0KGM6CTOR"}
+[2026-04-22 15:26:43 INF] HTTP GET /api/v1/auth/users responded 401 in 0.1833 ms {"SourceContext":"Serilog.AspNetCore.RequestLoggingMiddleware","RequestId":"0HNL0KGM6CTOS:00000001","ConnectionId":"0HNL0KGM6CTOS"}
+[2026-04-22 15:29:01 INF] HTTP OPTIONS /api/v1/auth/login responded 204 in 0.1335 ms {"SourceContext":"Serilog.AspNetCore.RequestLoggingMiddleware","RequestId":"0HNL0KGM6CTOT:00000001","ConnectionId":"0HNL0KGM6CTOT"}
+[2026-04-22 15:29:01 INF] User login succeeded {"EventId":{"Id":1002,"Name":"LogUserLoggedIn"},"SourceContext":"AuthService.Application.Services.AuthService","ActionId":"99f094c5-0d5d-4fd9-bca9-0deafa65b349","ActionName":"AuthService.Api.Controllers.AuthController.Login (AuthService.Api)","RequestId":"0HNL0KGM6CTOT:00000002","RequestPath":"/api/v1/auth/login","ConnectionId":"0HNL0KGM6CTOT"}
+[2026-04-22 15:29:01 INF] HTTP POST /api/v1/auth/login responded 200 in 61.2571 ms {"SourceContext":"Serilog.AspNetCore.RequestLoggingMiddleware","RequestId":"0HNL0KGM6CTOT:00000002","ConnectionId":"0HNL0KGM6CTOT"}
+[2026-04-22 15:47:57 INF] HTTP OPTIONS /api/v1/auth/users responded 204 in 0.0586 ms {"SourceContext":"Serilog.AspNetCore.RequestLoggingMiddleware","RequestId":"0HNL0KGM6CTOU:00000001","ConnectionId":"0HNL0KGM6CTOU"}
+[2026-04-22 15:47:57 INF] HTTP GET /api/v1/auth/users responded 401 in 0.4495 ms {"SourceContext":"Serilog.AspNetCore.RequestLoggingMiddleware","RequestId":"0HNL0KGM6CTOU:00000002","ConnectionId":"0HNL0KGM6CTOU"}
+[2026-04-22 15:48:09 INF] HTTP OPTIONS /api/v1/auth/login responded 204 in 0.1190 ms {"SourceContext":"Serilog.AspNetCore.RequestLoggingMiddleware","RequestId":"0HNL0KGM6CTOU:00000003","ConnectionId":"0HNL0KGM6CTOU"}
+[2026-04-22 15:48:09 INF] User login succeeded {"EventId":{"Id":1002,"Name":"LogUserLoggedIn"},"SourceContext":"AuthService.Application.Services.AuthService","ActionId":"99f094c5-0d5d-4fd9-bca9-0deafa65b349","ActionName":"AuthService.Api.Controllers.AuthController.Login (AuthService.Api)","RequestId":"0HNL0KGM6CTOU:00000004","RequestPath":"/api/v1/auth/login","ConnectionId":"0HNL0KGM6CTOU"}
+[2026-04-22 15:48:09 INF] HTTP POST /api/v1/auth/login responded 200 in 59.4130 ms {"SourceContext":"Serilog.AspNetCore.RequestLoggingMiddleware","RequestId":"0HNL0KGM6CTOU:00000004","ConnectionId":"0HNL0KGM6CTOU"}
+[2026-04-22 15:55:51 INF] Checking database connection... {"SourceContext":"Program"}
+[2026-04-22 15:55:52 INF] Database ready. Running seed data... {"SourceContext":"Program"}
+[2026-04-22 15:55:53 INF] Database initialization completed successfully {"SourceContext":"Program"}
+[2026-04-22 15:55:53 INF] AuthService API is running at http://localhost:5156. Health endpoint: http://localhost:5156/health {"SourceContext":"Program"}
+[2026-04-22 15:56:06 INF] User login succeeded {"EventId":{"Id":1002,"Name":"LogUserLoggedIn"},"SourceContext":"AuthService.Application.Services.AuthService","ActionId":"e5e005b9-cf77-4a39-ac38-d717c30fd6cf","ActionName":"AuthService.Api.Controllers.AuthController.Login (AuthService.Api)","RequestId":"0HNL0N7Q6NN5P:00000001","RequestPath":"/api/v1/auth/login","ConnectionId":"0HNL0N7Q6NN5P"}
+[2026-04-22 15:56:07 INF] HTTP POST /api/v1/auth/login responded 200 in 800.6999 ms {"SourceContext":"Serilog.AspNetCore.RequestLoggingMiddleware","RequestId":"0HNL0N7Q6NN5P:00000001","ConnectionId":"0HNL0N7Q6NN5P"}
+[2026-04-22 16:36:41 INF] HTTP OPTIONS /api/v1/auth/login responded 204 in 2.1203 ms {"SourceContext":"Serilog.AspNetCore.RequestLoggingMiddleware","RequestId":"0HNL0N7Q6NN5Q:00000001","ConnectionId":"0HNL0N7Q6NN5Q"}
+[2026-04-22 16:36:41 INF] User login succeeded {"EventId":{"Id":1002,"Name":"LogUserLoggedIn"},"SourceContext":"AuthService.Application.Services.AuthService","ActionId":"e5e005b9-cf77-4a39-ac38-d717c30fd6cf","ActionName":"AuthService.Api.Controllers.AuthController.Login (AuthService.Api)","RequestId":"0HNL0N7Q6NN5Q:00000002","RequestPath":"/api/v1/auth/login","ConnectionId":"0HNL0N7Q6NN5Q"}
+[2026-04-22 16:36:41 INF] HTTP POST /api/v1/auth/login responded 200 in 311.9836 ms {"SourceContext":"Serilog.AspNetCore.RequestLoggingMiddleware","RequestId":"0HNL0N7Q6NN5Q:00000002","ConnectionId":"0HNL0N7Q6NN5Q"}
+[2026-04-22 16:43:21 INF] User login succeeded {"EventId":{"Id":1002,"Name":"LogUserLoggedIn"},"SourceContext":"AuthService.Application.Services.AuthService","ActionId":"e5e005b9-cf77-4a39-ac38-d717c30fd6cf","ActionName":"AuthService.Api.Controllers.AuthController.Login (AuthService.Api)","RequestId":"0HNL0N7Q6NN5R:00000001","RequestPath":"/api/v1/auth/login","ConnectionId":"0HNL0N7Q6NN5R"}
+[2026-04-22 16:43:21 INF] HTTP POST /api/v1/auth/login responded 200 in 299.9286 ms {"SourceContext":"Serilog.AspNetCore.RequestLoggingMiddleware","RequestId":"0HNL0N7Q6NN5R:00000001","ConnectionId":"0HNL0N7Q6NN5R"}
+[2026-04-22 16:44:58 INF] Checking database connection... {"SourceContext":"Program"}
+[2026-04-22 16:44:58 INF] Database ready. Running seed data... {"SourceContext":"Program"}
+[2026-04-22 16:44:59 INF] Database initialization completed successfully {"SourceContext":"Program"}
+[2026-04-22 16:44:59 INF] AuthService API is running at http://localhost:5156. Health endpoint: http://localhost:5156/health {"SourceContext":"Program"}
+[2026-04-22 16:45:06 INF] User login succeeded {"EventId":{"Id":1002,"Name":"LogUserLoggedIn"},"SourceContext":"AuthService.Application.Services.AuthService","ActionId":"af9cccde-9edf-459f-8d03-6349f1192488","ActionName":"AuthService.Api.Controllers.AuthController.Login (AuthService.Api)","RequestId":"0HNL0O36BJC2C:00000001","RequestPath":"/api/v1/auth/login","ConnectionId":"0HNL0O36BJC2C"}
+[2026-04-22 16:45:06 INF] HTTP POST /api/v1/auth/login responded 200 in 624.4465 ms {"SourceContext":"Serilog.AspNetCore.RequestLoggingMiddleware","RequestId":"0HNL0O36BJC2C:00000001","ConnectionId":"0HNL0O36BJC2C"}

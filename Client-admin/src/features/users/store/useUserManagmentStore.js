@@ -18,19 +18,26 @@ export const useUserManagmentStore = create((set, get) => ({
         set({ loading: true, error: null });
         try {
             if (typeof updateUserRoleRequest !== "function") {
-                throw new Error("La función updateUserRole no está disponible");
+                throw new Error("La función updateUserRole no esta disponible");
             }
 
-            const { data: updateUser } = await updateUserRoleRequest(userId, newRole);
-
-            const users = get().users.map(() => 
-                u.id === updateUser.id ? { ...u, role: updateUser.role } : u
+            const { data: updateUser } = await updateUserRoleRequest(
+                userId,
+                newRole
             );
 
-            set({users, loading: false})
+            const users = get().users.map((u) =>
+                u.id === updateUser.id ? { ...u, role: updateUser.role } : u
+            )
+
+            set({ users, loading: false })
             return { success: true, user: updateUser }
         } catch (err) {
-            set({ error: err.response?.data?.message || err.message || "Error al cambiar rol", loading: false });
+            set({
+                error:
+                    err.response?.data?.message || err.message || "Error al cambiar rol",
+                loading: false
+            })
             return {
                 success: false,
                 error: err.response?.data?.message || err.message
