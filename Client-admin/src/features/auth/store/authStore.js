@@ -3,22 +3,51 @@ import { persist } from "zustand/middleware";
 import {
     login as loginRequest,
     register as registerRequest
-} from "../../../shared/api"
+} from "../../../shared/api";
+import { showError } from "../../../shared/utils/toast";
 
 export const useAuthStore = create(
     persist(
         (set, get) => ({
             user: null,
             token: null,
+            refreshToken: null,
             expiresAt: null,
             loading: false,
             error: null,
             isAuthenticated: false,
+            isLoading: false,
+
+            checkAuth: () => {
+                const token = get().token;
+                const role = get().user?.role;
+                const isAdmin = role === "ADMIN_ROLE";
+
+                if (token && !isAdmin) {
+                    set({
+                        user: null,
+                        token: null,
+                        refreshToken: null,
+                        expiresAt: null,
+                        isAuthenticated: false,
+                        isLoadingAuth: false,
+                        loading: false,
+                        error: "No tienes permisos para acceder como administrador"
+                    });
+                    return;
+                }
+
+                set({
+                    isLoadingAuth: false,
+                    isAuthenticated: Boolean(token) && isAdmin,
+                });
+            },
 
             logout: () => {
                 set({
                     user: null,
                     token: null,
+                    refreshToken: null,
                     expiresAt: null,
                     isAuthenticated: false
                 })
@@ -36,8 +65,8 @@ export const useAuthStore = create(
                     }
                 } catch (err) {
                     const message = err.response?.data.message || "Error al registrarse";
-                    set({ error: message, loading: false});
-                    return { success: false, error: message}
+                    set({ error: message, loading: false });
+                    return { success: false, error: message }
                 }
             },
 
@@ -46,13 +75,32 @@ export const useAuthStore = create(
                     set({ loading: true, error: null });
 
                     const { data } = await loginRequest({ emailOrUsername, password })
-                    console.log(data)
+                    console.log(data);
+
+                    const role = data.userDetails?.role;
+
+                    if (role !== "ADMIN_ROLE") {
+                        const message =
+                            "No tienes permisos para acceder como administrador";
+                        set({
+                            user: null,
+                            token: null,
+                            refreshToken: null,
+                            expiresAt: null,
+                            isAuthenticated: false,
+                            error: message
+                        });
+                        showError(message);
+                        return { success: false, error: message }
+                    }
 
                     set({
                         user: data.userDetails,
                         token: data.accessToken,
+                        refreshToken: data.refreshToken,
                         expiresAt: data.expiresAt,
                         loading: false,
+                        isAuthenticated: true,
                     })
 
                     return { success: true }
